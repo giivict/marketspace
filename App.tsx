@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { StatusBar, Text, View } from "react-native";
 
 import {
   useFonts,
@@ -11,6 +11,11 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <StatusBar
+        barStyle={"dark-content"}
+        backgroundColor={"transparent"}
+        translucent
+      />
       {fontsLoaded ? (
         <Text style={{ fontFamily: "Karla_700Bold" }}>Home</Text>
       ) : (
