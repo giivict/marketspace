@@ -1,16 +1,23 @@
 import { StatusBar } from "react-native";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
 
+import { Loading } from "@components/Loading";
+import { SignIn } from "@screens/SignIn";
+
+import { config } from "./config/gluestack-ui.config";
 import {
   useFonts,
   Karla_400Regular,
   Karla_700Bold,
+  Karla_300Light,
 } from "@expo-google-fonts/karla";
-import { Center, GluestackUIProvider, Text } from "@gluestack-ui/themed";
-import { config } from "./config/gluestack-ui.config";
-import { Loading } from "@components/Loading";
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Karla_400Regular, Karla_700Bold });
+  const [fontsLoaded] = useFonts({
+    Karla_400Regular,
+    Karla_700Bold,
+    Karla_300Light,
+  });
 
   return (
     <GluestackUIProvider config={config}>
@@ -19,13 +26,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      {!fontsLoaded ? (
-        <Center>
-          <Text style={{ fontFamily: "Karla_700Bold" }}>Home</Text>
-        </Center>
-      ) : (
-        <Loading />
-      )}
+      {fontsLoaded ? <SignIn /> : <Loading />}
     </GluestackUIProvider>
   );
 }
