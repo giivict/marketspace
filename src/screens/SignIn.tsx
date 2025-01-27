@@ -4,12 +4,11 @@ import LogoImg from "@assets/Logo.png";
 
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
-import { Loading } from "@components/Loading";
 
 export function SignIn() {
   return (
-    <VStack flex={1} bg="$gray600">
-      <Center>
+    <VStack flex={1} bg="$gray700">
+      <Center bg="$gray600">
         <Image source={LogoImg} alt="Logo" width={95} mt={109} />
         <Heading color="$gray100" fontSize={"$4xl"} mt={10}>
           marketspace
@@ -18,9 +17,16 @@ export function SignIn() {
           Seu espaço de compra e venda
         </Text>
       </Center>
-      <VStack flex={1} padding={16}>
+      <VStack
+        bg="$gray600"
+        borderBottomLeftRadius={30}
+        borderBottomRightRadius={30}
+        pb={90}
+      >
         <Center mt={60} gap={16}>
-          <Text color="$gray200">Acesse sua conta</Text>
+          <Text color="$gray200" fontFamily="$body">
+            Acesse sua conta
+          </Text>
 
           <Input
             placeholder="E-mail"
@@ -33,9 +39,21 @@ export function SignIn() {
             textColor="CLARO"
             title="Entrar"
             $active-bg="$blueDark"
+            mt={15}
           />
         </Center>
       </VStack>
+      <Center flex={1} gap={16} pb={50}>
+        <Text color="$gray200" fontFamily="$body">
+          Ainda não tem acesso?
+        </Text>
+        <Button
+          option="CLARO"
+          textColor="ESCURO"
+          title="Criar uma conta"
+          $active-bg="$gray400"
+        />
+      </Center>
     </VStack>
   );
 }

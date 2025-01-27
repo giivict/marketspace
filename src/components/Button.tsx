@@ -25,7 +25,7 @@ export function Button({
       ? "$gray100"
       : "$gray500";
 
-  const color = textColor === "CLARO" ? "$gray700" : "$gray300";
+  const color = textColor === "CLARO" ? "$gray700" : "$gray200";
   return (
     <GluestackButton
       w={"80%"}
