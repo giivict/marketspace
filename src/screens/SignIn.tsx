@@ -3,6 +3,8 @@ import { VStack, Image, Center, Text, Heading } from "@gluestack-ui/themed";
 import LogoImg from "@assets/Logo.png";
 
 import { Input } from "@components/Input";
+import { Button } from "@components/Button";
+import { Loading } from "@components/Loading";
 
 export function SignIn() {
   return (
@@ -26,6 +28,12 @@ export function SignIn() {
             autoCapitalize="none"
           />
           <Input placeholder="Senha" isPassword />
+          <Button
+            option="AZUL"
+            textColor="CLARO"
+            title="Entrar"
+            $active-bg="$blueDark"
+          />
         </Center>
       </VStack>
     </VStack>
