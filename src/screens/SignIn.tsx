@@ -2,6 +2,8 @@ import { VStack, Image, Center, Text, Heading } from "@gluestack-ui/themed";
 
 import LogoImg from "@assets/Logo.png";
 
+import { Input } from "@components/Input";
+
 export function SignIn() {
   return (
     <VStack flex={1} bg="$gray600">
@@ -14,9 +16,18 @@ export function SignIn() {
           Seu espaço de compra e venda
         </Text>
       </Center>
-      <Center mt={90}>
-        <Text color="$gray200">Acesse sua conta</Text>
-      </Center>
+      <VStack flex={1} padding={16}>
+        <Center mt={60} gap={16}>
+          <Text color="$gray200">Acesse sua conta</Text>
+
+          <Input
+            placeholder="E-mail"
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+          <Input placeholder="Senha" isPassword />
+        </Center>
+      </VStack>
     </VStack>
   );
 }
