@@ -11,10 +11,10 @@ type InputProps = ComponentProps<typeof InputField> & {
 };
 
 export function Input({ isPassword, ...props }: InputProps) {
-  const [isPasswordVisible, setPasswordVisible] = useState<boolean>(true);
+  const [isPasswordVisible, setPasswordVisible] = useState(!!isPassword);
 
   const togglePasswordVisibility = () => {
-    setPasswordVisible(false);
+    setPasswordVisible(!isPasswordVisible);
   };
 
   return (

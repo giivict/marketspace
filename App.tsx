@@ -11,6 +11,7 @@ import {
   Karla_700Bold,
   Karla_300Light,
 } from "@expo-google-fonts/karla";
+import { SignUp } from "@screens/SignUp";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,7 +27,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      {fontsLoaded ? <SignIn /> : <Loading />}
+      {fontsLoaded ? <SignUp /> : <Loading />}
     </GluestackUIProvider>
   );
 }

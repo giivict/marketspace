@@ -23,7 +23,7 @@ export function SignIn() {
         borderBottomRightRadius={30}
         pb={90}
       >
-        <Center mt={60} gap={16}>
+        <Center mt={80} gap={16}>
           <Text color="$gray200" fontFamily="$body">
             Acesse sua conta
           </Text>
