@@ -6,6 +6,9 @@ import {
   Heading,
   ScrollView,
 } from "@gluestack-ui/themed";
+import { useNavigation } from "@react-navigation/native";
+
+import { AuthNavigatorRoutsProps } from "@routes/auth.routes";
 
 import LogoImg from "@assets/Logo.png";
 
@@ -13,6 +16,12 @@ import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 
 export function SignIn() {
+  const navigator = useNavigation<AuthNavigatorRoutsProps>();
+
+  function handleSignUp() {
+    navigator.navigate("SignUp");
+  }
+
   return (
     <ScrollView bg="$gray700">
       <VStack flex={1} bg="$gray700">
@@ -60,6 +69,7 @@ export function SignIn() {
             textColor="ESCURO"
             title="Criar uma conta"
             $active-bg="$gray400"
+            onPress={handleSignUp}
           />
         </Center>
       </VStack>

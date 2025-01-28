@@ -8,15 +8,26 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from "@gluestack-ui/themed";
+import { useNavigation } from "@react-navigation/native";
+
+import { AuthNavigatorRoutsProps } from "@routes/auth.routes";
 
 import LogoImg from "@assets/Logo.png";
 import UserPhoto from "@assets/UserPhotoDefault.png";
+
 import { PencilSimpleLine } from "phosphor-react-native";
+
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { Platform } from "react-native";
 
 export function SignUp() {
+  const navigator = useNavigation<AuthNavigatorRoutsProps>();
+
+  function handleGoBack() {
+    navigator.goBack();
+  }
+
   return (
     <KeyboardAvoidingView
       flex={1}
@@ -81,6 +92,7 @@ export function SignUp() {
               mt={15}
               mb={100}
               $active-bgColor="$gray200"
+              onPress={handleGoBack}
             />
           </Center>
         </VStack>
