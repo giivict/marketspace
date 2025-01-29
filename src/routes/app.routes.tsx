@@ -53,14 +53,26 @@ export function AppRoutes() {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: () => <House />,
+          tabBarIcon: ({ color, size, focused }) => (
+            <House
+              color={color}
+              size={size}
+              weight={focused ? "bold" : "regular"}
+            />
+          ),
         }}
       />
       <Screen
         name="MyAd"
         component={MyAd}
         options={{
-          tabBarIcon: () => <Tag />,
+          tabBarIcon: ({ color, size, focused }) => (
+            <Tag
+              color={color}
+              size={size}
+              weight={focused ? "bold" : "regular"}
+            />
+          ),
         }}
       />
       <Screen
