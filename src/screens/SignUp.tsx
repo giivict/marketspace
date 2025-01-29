@@ -13,13 +13,14 @@ import { useNavigation } from "@react-navigation/native";
 import { AuthNavigatorRoutsProps } from "@routes/auth.routes";
 
 import LogoImg from "@assets/Logo.png";
-import UserPhoto from "@assets/UserPhotoDefault.png";
+import UserPhotoPNG from "@assets/UserPhotoDefault.png";
 
 import { PencilSimpleLine } from "phosphor-react-native";
 
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { Platform } from "react-native";
+import { UserPhoto } from "@components/UserPhoto";
 
 export function SignUp() {
   const navigator = useNavigation<AuthNavigatorRoutsProps>();
@@ -47,7 +48,12 @@ export function SignUp() {
           <VStack marginTop={40} paddingHorizontal={16}>
             <Center>
               <Center>
-                <Image source={UserPhoto} alt="user-photo" w={88} h={88} />
+                <UserPhoto
+                  source={UserPhotoPNG}
+                  alt="user-photo"
+                  w={88}
+                  h={88}
+                />
                 <Pressable
                   p={12}
                   h={40}
