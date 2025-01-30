@@ -1,9 +1,10 @@
-import { CardAdInfo } from "@components/CardAdInfo";
+import { InfoCard } from "@components/InfoCard";
 import { HomeHeader } from "@components/HomeHeader";
 import { Input } from "@components/Input";
-import { Text, VStack } from "@gluestack-ui/themed";
+import { ScrollView, Text, View, VStack } from "@gluestack-ui/themed";
 import { MagnifyingGlass, Sliders } from "phosphor-react-native";
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
+import { AdCard } from "@components/AdCard";
 
 export function Home() {
   const { tokens } = gluestackUIConfig;
@@ -15,7 +16,7 @@ export function Home() {
         <Text color="$gray300" fontSize="$sm" fontFamily="$body">
           Seus produtos anunciados para venda
         </Text>
-        <CardAdInfo number={4} />
+        <InfoCard number={4} />
 
         <Text
           mt={40}
@@ -40,6 +41,24 @@ export function Home() {
           }
         />
       </VStack>
+      <ScrollView ml={25} mr={25} pb={50} showsVerticalScrollIndicator={false}>
+        <View
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="space-between"
+          mt={30}
+          width="100%"
+          gap={24}
+          mb={20}
+        >
+          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
+          <AdCard isSelcted="ATIVADO" title="Tênis vermelho" price="59,90" />
+          <AdCard isSelcted="ATIVADO" title="Tênis vermelho" price="59,90" />
+          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
+          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
+          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
+        </View>
+      </ScrollView>
     </VStack>
   );
 }

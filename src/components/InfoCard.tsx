@@ -6,7 +6,7 @@ type Props = {
   number: number;
 };
 
-export function CardAdInfo({ number }: Props) {
+export function InfoCard({ number }: Props) {
   const { tokens } = gluestackUIConfig;
   return (
     <HStack
