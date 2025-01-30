@@ -1,4 +1,5 @@
 import { HStack, Text, VStack } from "@gluestack-ui/themed";
+import { useNavigation } from "@react-navigation/native";
 
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
 
@@ -6,10 +7,16 @@ import { UserPhoto } from "./UserPhoto";
 import { Plus } from "phosphor-react-native";
 
 import { Button } from "./Button";
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 import Avatar from "@assets/Avatar.png";
 
 export function HomeHeader() {
+  const navigator = useNavigation<AppNavigatorRoutesProps>();
+
+  function handleNewAd() {
+    navigator.navigate("New");
+  }
   const { tokens } = gluestackUIConfig;
   return (
     <HStack mt={64} gap={8} justifyContent="space-around">
@@ -31,6 +38,7 @@ export function HomeHeader() {
         icon={<Plus color={tokens.colors.gray600} size={16} />}
         width={"40%"}
         h={45}
+        onPress={handleNewAd}
       />
     </HStack>
   );

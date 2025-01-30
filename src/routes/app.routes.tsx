@@ -5,7 +5,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 
 import { AdDetails } from "@screens/AdDetails";
-import { CreateAd } from "@screens/CreateAd";
+import { NewAd } from "@screens/NewAd";
 import { EditAd } from "@screens/EditAd";
 import { Home } from "@screens/Home";
 import { MyAd } from "@screens/MyAd";
@@ -20,7 +20,7 @@ type AppRoutes = {
   Home: undefined;
   MyAd: undefined;
   SignOut: undefined;
-  Create: undefined;
+  New: undefined;
   Edit: undefined;
   Preview: undefined;
   AdDetails: undefined;
@@ -83,8 +83,8 @@ export function AppRoutes() {
         }}
       />
       <Screen
-        name="Create"
-        component={CreateAd}
+        name="New"
+        component={NewAd}
         options={{ tabBarButton: () => null }}
       />
       <Screen

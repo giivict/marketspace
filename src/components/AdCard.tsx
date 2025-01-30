@@ -1,6 +1,5 @@
 import { PressableProps } from "react-native";
 import {
-  Center,
   HStack,
   Image,
   Pressable,
@@ -8,9 +7,12 @@ import {
   View,
   VStack,
 } from "@gluestack-ui/themed";
+import { useNavigation } from "@react-navigation/native";
 
 import { Status } from "./Status";
 import { UserPhoto } from "./UserPhoto";
+
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 import Product from "@assets/Product.png";
 import UserPhotoPNG from "@assets/UserPhotoDefault.png";
@@ -22,8 +24,14 @@ type Props = PressableProps & {
 };
 
 export function AdCard({ title, price, isSelcted, ...rest }: Props) {
+  const navigator = useNavigation<AppNavigatorRoutesProps>();
+
+  function handleAdDetails() {
+    navigator.navigate("AdDetails");
+  }
+
   return isSelcted === "ATIVADO" ? (
-    <Pressable {...rest}>
+    <Pressable onPress={handleAdDetails} {...rest}>
       <VStack>
         <Image
           source={Product}
@@ -56,7 +64,7 @@ export function AdCard({ title, price, isSelcted, ...rest }: Props) {
       </VStack>
     </Pressable>
   ) : (
-    <Pressable>
+    <Pressable onPress={handleAdDetails} {...rest}>
       <VStack>
         <Image
           source={Product}
