@@ -72,7 +72,7 @@ export function SignUp() {
               </Center>
             </Center>
 
-            <Center gap={16} mt={15}>
+            <Center gap={16} mt={15} paddingHorizontal={40}>
               <Input placeholder="Nome" autoCapitalize="words" />
               <Input placeholder="E-mail" keyboardType="email-address" />
               <Input placeholder="Telefone" keyboardType="number-pad" />
@@ -84,6 +84,7 @@ export function SignUp() {
                 option="ESCURO"
                 mt={15}
                 $active-bgColor="$gray200"
+                width={"100%"}
               />
             </Center>
           </VStack>

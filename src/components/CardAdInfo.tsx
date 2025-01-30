@@ -12,7 +12,6 @@ export function CardAdInfo({ number }: Props) {
     <HStack
       bgColor="#647AC71A"
       py={12}
-      mr={25}
       pr={20}
       pl={16}
       h={75}
@@ -20,7 +19,7 @@ export function CardAdInfo({ number }: Props) {
       gap={12}
       alignItems="center"
       justifyContent="space-between"
-      mt={20}
+      mt={15}
     >
       <HStack gap={16} alignItems="center">
         <Tag size={22} color={tokens.colors.blueDark} />
