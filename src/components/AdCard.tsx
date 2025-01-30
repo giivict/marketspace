@@ -1,3 +1,4 @@
+import { PressableProps } from "react-native";
 import {
   Center,
   HStack,
@@ -7,11 +8,12 @@ import {
   View,
   VStack,
 } from "@gluestack-ui/themed";
-import Product from "@assets/Product.png";
-import { UserPhoto } from "./UserPhoto";
-import UserPhotoPNG from "@assets/UserPhotoDefault.png";
+
 import { Status } from "./Status";
-import { PressableProps } from "react-native";
+import { UserPhoto } from "./UserPhoto";
+
+import Product from "@assets/Product.png";
+import UserPhotoPNG from "@assets/UserPhotoDefault.png";
 
 type Props = PressableProps & {
   isSelcted: "ATIVADO" | "DESATIVADO";

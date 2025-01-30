@@ -8,12 +8,11 @@ import {
 } from "@gluestack-ui/themed";
 import { useNavigation } from "@react-navigation/native";
 
+import { Input } from "@components/Input";
+import { Button } from "@components/Button";
 import { AuthNavigatorRoutsProps } from "@routes/auth.routes";
 
 import LogoImg from "@assets/Logo.png";
-
-import { Input } from "@components/Input";
-import { Button } from "@components/Button";
 
 export function SignIn() {
   const navigator = useNavigation<AuthNavigatorRoutsProps>();

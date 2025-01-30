@@ -1,8 +1,11 @@
 import { HStack, Text, VStack } from "@gluestack-ui/themed";
-import { Button } from "./Button";
-import { Plus } from "phosphor-react-native";
+
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
+
 import { UserPhoto } from "./UserPhoto";
+import { Plus } from "phosphor-react-native";
+
+import { Button } from "./Button";
 
 import Avatar from "@assets/Avatar.png";
 

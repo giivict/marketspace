@@ -1,3 +1,4 @@
+import { Platform } from "react-native";
 import {
   createBottomTabNavigator,
   BottomTabNavigationProp,
@@ -12,9 +13,8 @@ import { MyAdDetails } from "@screens/MyAdDetails";
 import { PreviewAd } from "@screens/PreviewAd";
 import { SignIn } from "@screens/SignIn";
 
-import { House, Tag, SignOut } from "phosphor-react-native";
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
-import { Platform } from "react-native";
+import { House, Tag, SignOut } from "phosphor-react-native";
 
 type AppRoutes = {
   Home: undefined;

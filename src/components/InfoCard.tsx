@@ -1,6 +1,8 @@
 import { HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
-import { ArrowRight, Tag } from "phosphor-react-native";
+
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
+
+import { ArrowRight, Tag } from "phosphor-react-native";
 
 type Props = {
   number: number;

@@ -1,10 +1,11 @@
+import { ComponentProps, ReactNode, useState } from "react";
 import {
   Input as GluestackInput,
   InputField,
   Pressable,
   View,
 } from "@gluestack-ui/themed";
-import { ComponentProps, ReactNode, useState } from "react";
+
 import { Eye, EyeSlash } from "phosphor-react-native";
 
 type InputProps = ComponentProps<typeof InputField> & {

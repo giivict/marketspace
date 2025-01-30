@@ -1,10 +1,12 @@
+import { ScrollView, Text, View, VStack } from "@gluestack-ui/themed";
+
+import { Input } from "@components/Input";
+import { AdCard } from "@components/AdCard";
 import { InfoCard } from "@components/InfoCard";
 import { HomeHeader } from "@components/HomeHeader";
-import { Input } from "@components/Input";
-import { ScrollView, Text, View, VStack } from "@gluestack-ui/themed";
-import { MagnifyingGlass, Sliders } from "phosphor-react-native";
+
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
-import { AdCard } from "@components/AdCard";
+import { MagnifyingGlass, Sliders } from "phosphor-react-native";
 
 export function Home() {
   const { tokens } = gluestackUIConfig;
