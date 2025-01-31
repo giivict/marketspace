@@ -7,31 +7,24 @@ import {
   View,
   VStack,
 } from "@gluestack-ui/themed";
-import { useNavigation } from "@react-navigation/native";
 
 import { Status } from "./Status";
 import { UserPhoto } from "./UserPhoto";
 
-import { AppNavigatorRoutesProps } from "@routes/app.routes";
-
 import Product from "@assets/Product.png";
 import UserPhotoPNG from "@assets/UserPhotoDefault.png";
+import { ReactNode } from "react";
 
 type Props = PressableProps & {
   isSelcted: "ATIVADO" | "DESATIVADO";
   title: string;
   price: string;
+  photo?: ReactNode;
 };
 
-export function AdCard({ title, price, isSelcted, ...rest }: Props) {
-  const navigator = useNavigation<AppNavigatorRoutesProps>();
-
-  function handleAdDetails() {
-    navigator.navigate("AdDetails");
-  }
-
+export function AdCard({ title, price, photo, isSelcted, ...rest }: Props) {
   return isSelcted === "ATIVADO" ? (
-    <Pressable onPress={handleAdDetails} {...rest}>
+    <Pressable {...rest}>
       <VStack>
         <Image
           source={Product}
@@ -40,15 +33,18 @@ export function AdCard({ title, price, isSelcted, ...rest }: Props) {
           w={170}
           h={130}
         />
-        <UserPhoto
-          source={UserPhotoPNG}
-          alt="user-photo"
-          h={25}
-          w={25}
-          position="absolute"
-          top={5}
-          left={5}
-        />
+        {photo && (
+          <UserPhoto
+            source={UserPhotoPNG}
+            alt="user-photo"
+            h={25}
+            w={25}
+            position="absolute"
+            top={5}
+            left={5}
+          />
+        )}
+
         <Status isSelected="NOVO" />
         <Text fontFamily="$body" color="$gray200" fontSize={"$sm"} mt={5}>
           {title}
@@ -64,7 +60,7 @@ export function AdCard({ title, price, isSelcted, ...rest }: Props) {
       </VStack>
     </Pressable>
   ) : (
-    <Pressable onPress={handleAdDetails} {...rest}>
+    <Pressable {...rest}>
       <VStack>
         <Image
           source={Product}
@@ -73,15 +69,17 @@ export function AdCard({ title, price, isSelcted, ...rest }: Props) {
           w={170}
           h={130}
         />
-        <UserPhoto
-          source={UserPhotoPNG}
-          alt="user-photo"
-          h={25}
-          w={25}
-          position="absolute"
-          top={5}
-          left={5}
-        />
+        {photo && (
+          <UserPhoto
+            source={UserPhotoPNG}
+            alt="user-photo"
+            h={25}
+            w={25}
+            position="absolute"
+            top={5}
+            left={5}
+          />
+        )}
         <Status isSelected="NOVO" />
 
         <View
@@ -111,10 +109,10 @@ export function AdCard({ title, price, isSelcted, ...rest }: Props) {
           {title}
         </Text>
         <HStack gap={4} alignItems="center">
-          <Text fontFamily="$heading" color="$gray400" fontSize={"$xs"}>
+          <Text fontFamily="$body" color="$gray400" fontSize={"$xs"}>
             R$
           </Text>
-          <Text fontFamily="$heading" color="$gray400" fontSize={"$md"}>
+          <Text fontFamily="$body" color="$gray400" fontSize={"$md"}>
             {price}
           </Text>
         </HStack>

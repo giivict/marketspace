@@ -1,15 +1,22 @@
 import { ScrollView, Text, View, VStack } from "@gluestack-ui/themed";
+import { useNavigation } from "@react-navigation/native";
 
 import { Input } from "@components/Input";
 import { AdCard } from "@components/AdCard";
 import { InfoCard } from "@components/InfoCard";
 import { HomeHeader } from "@components/HomeHeader";
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
 import { MagnifyingGlass, Sliders } from "phosphor-react-native";
 
 export function Home() {
   const { tokens } = gluestackUIConfig;
+  const navigator = useNavigation<AppNavigatorRoutesProps>();
+
+  function handleAdDetails() {
+    navigator.navigate("AdDetails");
+  }
   return (
     <VStack flex={1} bgColor="$gray600">
       <HomeHeader />
@@ -53,12 +60,48 @@ export function Home() {
           gap={24}
           mb={20}
         >
-          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
-          <AdCard isSelcted="ATIVADO" title="Tênis vermelho" price="59,90" />
-          <AdCard isSelcted="ATIVADO" title="Tênis vermelho" price="59,90" />
-          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
-          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
-          <AdCard isSelcted="DESATIVADO" title="Tênis vermelho" price="59,90" />
+          <AdCard
+            isSelcted="DESATIVADO"
+            title="Tênis vermelho"
+            price="59,90"
+            photo
+            onPress={handleAdDetails}
+          />
+          <AdCard
+            isSelcted="ATIVADO"
+            title="Tênis vermelho"
+            price="59,90"
+            photo
+            onPress={handleAdDetails}
+          />
+          <AdCard
+            isSelcted="ATIVADO"
+            title="Tênis vermelho"
+            price="59,90"
+            photo
+            onPress={handleAdDetails}
+          />
+          <AdCard
+            isSelcted="DESATIVADO"
+            title="Tênis vermelho"
+            price="59,90"
+            photo
+            onPress={handleAdDetails}
+          />
+          <AdCard
+            isSelcted="DESATIVADO"
+            title="Tênis vermelho"
+            price="59,90"
+            photo
+            onPress={handleAdDetails}
+          />
+          <AdCard
+            isSelcted="DESATIVADO"
+            title="Tênis vermelho"
+            price="59,90"
+            photo
+            onPress={handleAdDetails}
+          />
         </View>
       </ScrollView>
     </VStack>
